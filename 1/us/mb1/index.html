@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>MoonPay Mining - Secure Cryptocurrency Mining Platform</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #1a1a1a;
+            --accent-color: #ffd700;
+            --accent-secondary: #ffed4e;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-accent: #ffd700;
+            --background-light: #000000;
+            --background-dark: #111111;
+            --background-card: #1a1a1a;
+            --shadow-light: rgba(255, 215, 0, 0.1);
+            --shadow-medium: rgba(255, 215, 0, 0.2);
+            --shadow-dark: rgba(0, 0, 0, 0.8);
+            --gradient-primary: linear-gradient(135deg, #000000, #1a1a1a);
+            --gradient-accent: linear-gradient(135deg, #ffd700, #ffed4e);
+            --gradient-dark: linear-gradient(135deg, #111111, #000000);
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --border-radius-lg: 24px;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+            --font-size-4xl: 2.5rem;
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background-light);
+            overflow-x: hidden;
+        }
+
+        .layout-container {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .hero-section {
+            background: var(--gradient-primary);
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        linear-gradient(45deg, transparent 0%, rgba(255, 215, 0, 0.05) 50%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: white;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 400;
+        }
+
+        .earnings-highlight {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) auto;
+            max-width: 600px;
+        }
+
+        .earnings-amount {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+        }
+
+        .section-container {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .feature-card {
+            background: var(--background-card);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: 0 4px 20px var(--shadow-dark);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px var(--shadow-medium);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-2xl);
+        }
+
+        .feature-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .feature-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .process-step {
+            background: var(--background-dark);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-accent);
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto var(--spacing-sm);
+        }
+
+        .floating-contact {
+            position: fixed;
+            right: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .contact-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px var(--shadow-medium);
+            transition: all var(--transition-medium);
+            text-decoration: none;
+            background: #25d366;
+        }
+
+        .contact-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px var(--shadow-medium);
+        }
+
+        .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            background-image: url('http://luodiye.pol123.com/cdn.cmsfly.com/68511fc6bef5a70011fcaa2d/images/whatsapp.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-cta {
+            margin-top: var(--spacing-lg);
+        }
+
+        .whatsapp-hero-btn {
+            background: #25d366;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all var(--transition-medium);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-hero-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            background: #22c55e;
+        }
+
+        .whatsapp-hero-icon {
+            width: 24px;
+            height: 24px;
+            background-image: url('http://luodiye.pol123.com/cdn.cmsfly.com/68511fc6bef5a70011fcaa2d/images/whatsapp.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .floating-contact {
+            position: fixed;
+            right: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .floating-whatsapp {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25d366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px var(--shadow-medium);
+            transition: all var(--transition-medium);
+            cursor: pointer;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px var(--shadow-medium);
+        }
+
+        .floating-whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            background-image: url('http://luodiye.pol123.com/cdn.cmsfly.com/68511fc6bef5a70011fcaa2d/images/whatsapp.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-accent);
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: black;
+            animation: bounce 1.5s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-8px);
+            }
+            60% {
+                transform: translateY(-4px);
+            }
+        }
+
+        .benefits-section {
+            background: var(--background-dark);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--background-light);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            margin-right: var(--spacing-sm);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            text-align: center;
+            color: white;
+            margin-top: var(--spacing-xl);
+        }
+
+        .cta-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .disclaimer {
+            background: var(--background-dark);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            margin-top: var(--spacing-xl);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: var(--font-size-2xl);
+            }
+            
+            .hero-subtitle {
+                font-size: var(--font-size-lg);
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .floating-contact {
+                right: var(--spacing-sm);
+            }
+            
+            .contact-button {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .whatsapp-icon {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .content-wrapper {
+                padding: var(--spacing-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .earnings-highlight {
+                margin: var(--spacing-md) auto;
+                padding: var(--spacing-md);
+            }
+            
+            .earnings-amount {
+                font-size: var(--font-size-xl);
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animated-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-slow);
+        }
+
+        .animated-element.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(93, 92, 222, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(93, 92, 222, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(93, 92, 222, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout-container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title animated-element">MoonPay Mining Platform</h1>
+                <p class="hero-subtitle animated-element">Advanced Cryptocurrency Mining Solutions</p>
+                
+                <div class="earnings-highlight animated-element">
+                    <div class="earnings-amount">$500 - $10,000 USDC/USDT</div>
+                    <p>Daily potential earnings through our secure mining platform</p>
+                    <p style="margin-top: 1rem; font-size: 1rem;">No deposits required • No collateral needed • Funds remain in your wallet</p>
+                </div>
+                
+                <div class="hero-cta animated-element">
+                    <button class="whatsapp-hero-btn" onclick="t3()">
+                        <div class="whatsapp-hero-icon"></div>
+                        <span>Contact Support</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <main class="content-wrapper">
+            <section class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title animated-element">Why Choose Our Platform?</h2>
+                </div>
+                
+                <div class="feature-grid">
+                    <article class="feature-card animated-element">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Complete Security</h3>
+                        <p class="feature-description">Your assets remain in your own wallet at all times. No transfers or top-ups required. You maintain full control with zero risk and 100% security.</p>
+                    </article>
+                    
+                    <article class="feature-card animated-element">
+                        <div class="feature-icon">💰</div>
+                        <h3 class="feature-title">Transparent Revenue</h3>
+                        <p class="feature-description">Open and transparent income model. Real-time mining performance data with automatic daily calculations. System calculates profits based on actual computing power.</p>
+                    </article>
+                    
+                    <article class="feature-card animated-element">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">AI-Powered Mining</h3>
+                        <p class="feature-description">AI dynamic scheduling of PoW computing power, automatically mining BTC, LTC, ETC, DOGE and other mainstream cryptocurrencies with optimized strategies.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title animated-element">How Does Free Mining Work?</h2>
+                </div>
+                
+                <div class="benefits-section animated-element">
+                    <p style="font-size: 1.1rem; margin-bottom: 1.5rem; text-align: center;">Bitcoin (BTC) mining is the process of generating income by using computing hardware to verify transactions.</p>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>Connect Wallet</h4>
+                            <p>Simply connect your existing wallet - no account funding required</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Start Mining</h4>
+                            <p>Begin participating in our secure mining network immediately</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Earn Daily</h4>
+                            <p>Receive automated daily settlements in stable USDC</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-container animated-element">
+                    <img src="https://www.jacmsotck.online/415rirenshen/15.jpg" alt="Mining Platform Interface" class="content-image">
+                </div>
+            </section>
+
+            <section class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title animated-element">Mining Technology</h2>
+                </div>
+                
+                <div class="feature-grid">
+                    <article class="feature-card animated-element">
+                        <div class="feature-icon">🤖</div>
+                        <h3 class="feature-title">AI Optimization</h3>
+                        <p class="feature-description">Advanced AI algorithms dynamically schedule PoW computing power for optimal mining efficiency across multiple cryptocurrency networks.</p>
+                    </article>
+                    
+                    <article class="feature-card animated-element">
+                        <div class="feature-icon">💎</div>
+                        <h3 class="feature-title">Multi-Currency Support</h3>
+                        <p class="feature-description">Automatically mine BTC, LTC, ETC, DOGE and other mainstream cryptocurrencies with intelligent switching based on profitability.</p>
+                    </article>
+                    
+                    <article class="feature-card animated-element">
+                        <div class="feature-icon">🔄</div>
+                        <h3 class="feature-title">Stable Returns</h3>
+                        <p class="feature-description">Daily consolidated settlements automatically convert to USDC stablecoin, eliminating cryptocurrency price volatility risks.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="cta-section animated-element">
+                <h2 class="cta-title">Ready to Start Mining?</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 1rem;">Join thousands of users earning daily returns through our secure platform</p>
+                <p>MoonPay Mining = Multi-currency PoW mining + Advanced AI strategies + Stable USDC returns</p>
+            </section>
+
+            <div class="disclaimer animated-element">
+                <p><strong>Important Disclaimer:</strong> Cryptocurrency mining involves risks. Past performance does not guarantee future results. This platform is for educational and technological demonstration purposes. Users should conduct their own research and consult with financial advisors before participating in any cryptocurrency-related activities. Mining returns are subject to market conditions, network difficulty, and other factors beyond our control. Please ensure compliance with your local regulations regarding cryptocurrency activities.</p>
+            </div>
+        </main>
+
+        <aside class="floating-contact">
+            <div class="floating-whatsapp" onclick="t3()">
+                <div class="floating-whatsapp-icon"></div>
+                <div class="notification-badge">1</div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        function t3() {
+            window.open('https://www.qq.com', '_blank');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerConfig = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const animationObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerConfig);
+
+            const animatedElements = document.querySelectorAll('.animated-element');
+            animatedElements.forEach(function(element) {
+                animationObserver.observe(element);
+            });
+
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach(function(card, index) {
+                card.style.animationDelay = (index * 0.1) + 's';
+            });
+
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+
+            document.addEventListener('selectstart', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+</body>
+</html>
