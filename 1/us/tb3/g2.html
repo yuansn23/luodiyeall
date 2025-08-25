@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Insights Community - Join 7000+ Investors</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .deep-gradient { 
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533a7d 100%);
+            position: relative;
+        }
+        .deep-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 70%);
+            pointer-events: none;
+        }
+        .card-shadow { 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .testimonial-card { 
+            backdrop-filter: blur(15px); 
+            background: rgba(15, 15, 35, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .deep-card {
+            background: linear-gradient(145deg, rgba(15, 15, 35, 0.8), rgba(26, 26, 46, 0.6));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .deep-button {
+            background: linear-gradient(145deg, #2563eb, #1e40af);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        .deep-button:hover {
+            background: linear-gradient(145deg, #1d4ed8, #1e3a8a);
+            box-shadow: 0 15px 40px rgba(29, 78, 216, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <script>
+        function d2() {
+            window.open('https://wa.me/1111111111', '_blank');
+        }
+        
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</head>
+<body class="bg-gray-900">
+
+<!-- First Screen -->
+<div class="min-h-screen deep-gradient relative overflow-hidden">
+    <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+    
+    <!-- Header -->
+    <header class="relative z-10 pt-6 px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center">
+                <div class="inline-flex items-center space-x-2 bg-black bg-opacity-30 px-4 py-2 rounded-full backdrop-blur-sm border border-gray-600">
+                    <span class="w-2 h-2 bg-cyan-400 rounded-full"></span>
+                    <span class="text-cyan-200 text-sm font-medium">7000+ Active Members Online</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 pt-20">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <!-- Professional Image -->
+            <div class="mb-8">
+                <img src="img/2.jpg" 
+                     alt="Financial Professional" 
+                     class="w-32 h-32 mx-auto rounded-full border-2 border-cyan-300 shadow-2xl object-cover">
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                <span class="text-cyan-300">Financial Trend Insights</span>
+                <span class="block text-3xl md:text-4xl mt-2 text-gray-200">
+                    Join 7000+ Investors in Real-Time Discussion
+                </span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Free Daily Market Analysis | Exclusive Trading Insights | Compliant Investment Discussions
+            </p>
+
+            <!-- CTA Button -->
+            <button onclick="d2()" 
+                    class="deep-button text-white text-lg font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105">
+                🚀 Join WhatsApp Community - FREE
+            </button>
+
+            <!-- Disclaimer -->
+            <div class="mt-6 bg-red-900 bg-opacity-40 border border-red-400 rounded-lg p-4 max-w-2xl mx-auto backdrop-blur-sm">
+                <p class="text-red-200 text-sm">
+                    ⚠️ <strong>Important Disclaimer:</strong> This community does not provide investment advice or manage funds on behalf of clients. All discussions represent individual member opinions only.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Second Screen -->
+<div class="min-h-screen bg-gray-900 py-16" style="background: linear-gradient(180deg, #0f0f23 0%, #1a1a2e 100%);">
+    <div class="max-w-4xl mx-auto px-4">
+        
+        <!-- What You Get Section -->
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8">
+                What You'll Receive
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="deep-card p-6 rounded-xl card-shadow">
+                    <div class="text-cyan-400 text-3xl mb-4">📊</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Daily Market Reports</h3>
+                    <p class="text-gray-300">Get real-time alerts for breaking financial news and market dynamics, and respond quickly to market changes.</p>
+                </div>
+                
+                <div class="deep-card p-6 rounded-xl card-shadow">
+                    <div class="text-green-400 text-3xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Real-Time Alerts</h3>
+                    <p class="text-gray-300">Breaking financial news and market movements</p>
+                </div>
+                
+                <div class="deep-card p-6 rounded-xl card-shadow">
+                    <div class="text-purple-400 text-3xl mb-4">🛠️</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Analysis Tools</h3>
+                    <p class="text-gray-300">Free access to professional charting and analysis tools</p>
+                </div>
+                
+                <div class="deep-card p-6 rounded-xl card-shadow">
+                    <div class="text-orange-400 text-3xl mb-4">📚</div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Educational Resources</h3>
+                    <p class="text-gray-300">Weekly curated financial education articles and insights</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="text-center mb-16">
+            <div class="relative inline-block">
+                <div class="absolute inset-0 bg-blue-500 rounded-xl blur-2xl opacity-20"></div>
+                <img src="img/3.jpg" 
+                     alt="Professional Financial Community" 
+                     class="relative w-full max-w-md mx-auto rounded-xl shadow-2xl border border-gray-600">
+            </div>
+        </div>
+
+         
+        <!-- Final CTA -->
+        <div class="text-center mb-16">
+            <button onclick="d2()" 
+                    class="deep-button text-white text-xl font-semibold px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105">
+                Join Free WhatsApp Community Now
+            </button>
+        </div>
+
+        <!-- Risk Warning -->
+        <div class="bg-yellow-900 bg-opacity-40 border-l-4 border-yellow-400 p-6 mb-8 backdrop-blur-sm">
+            <h4 class="text-lg font-semibold text-yellow-200 mb-3">⚠️ Important Risk Disclosure</h4>
+            <ul class="text-yellow-300 text-sm space-y-2">
+                <li>• All investments carry risk of loss. Past performance does not guarantee future results.</li>
+                <li>• Community discussions are for educational purposes only and do not constitute financial advice.</li>
+                <li>• Members should conduct their own research and consult licensed financial advisors before making investment decisions.</li>
+                <li>• Cryptocurrency and forex trading involves substantial risk and may not be suitable for all investors.</li>
+                <li>• This community does not provide personalized investment recommendations or portfolio management services.</li>
+                <li>• All market data and analysis shared are for informational purposes only.</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center pt-8 border-t border-gray-700">
+            <div class="flex flex-wrap justify-center space-x-6 text-sm text-gray-400">
+                <a href="Privacy.html" class="hover:text-cyan-400">Privacy Policy</a>
+                <a href="#" class="hover:text-cyan-400">Terms of Service</a>
+                <a href="#" class="hover:text-cyan-400">Community Guidelines</a>
+                <a href="#" class="hover:text-cyan-400">Risk Disclosure</a>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">
+                © 2024 Financial Insights Community. Educational content only. Not investment advice.
+            </p>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>
