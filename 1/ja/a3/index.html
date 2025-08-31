@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>小手川隆 - 日本最強投資家のセミナー</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+            display: block;
+            position: relative;
+            padding: 3px;
+            background: linear-gradient(135deg, #ffd700, #ffb347, #ff6b6b);
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #ffd700, #ffb347, #ff6b6b);
+            border-radius: 15px;
+            z-index: -1;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-badges {
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            }
+            to {
+                box-shadow: 0 4px 20px rgba(40, 167, 69, 0.7);
+            }
+        }
+
+        .hero-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+        }
+
+        .section {
+            padding: 30px 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '📈';
+            margin-right: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            border-radius: 2px;
+        }
+
+        .philosophy-item {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-left: 4px solid #28a745;
+            font-size: 15px;
+            line-height: 1.7;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .philosophy-item::before {
+            content: '💡';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 20px;
+        }
+
+        .seminar-content {
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 2px solid #28a745;
+        }
+
+        .seminar-intro {
+            margin-bottom: 25px;
+            font-weight: bold;
+            color: #1e3c72;
+            text-align: center;
+            background: linear-gradient(135deg, #e8f5e8, #f0fff0);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #28a745;
+            position: relative;
+        }
+
+        .seminar-intro::before {
+            content: '🎯';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+        }
+
+        .seminar-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(40, 167, 69, 0.05);
+            border-radius: 8px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.6;
+            border-left: 3px solid #28a745;
+        }
+
+        .seminar-item::before {
+            content: '✅';
+            position: absolute;
+            top: 15px;
+            left: -15px;
+            background: #28a745;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+        }
+
+        .seminar-item-title {
+            font-weight: bold;
+            color: #1e3c72;
+            margin-bottom: 5px;
+        }
+
+        .investment-approach {
+            background: linear-gradient(135deg, #f0fff0, #e8f5e8);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #28a745;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .investment-approach::before {
+            content: '📊';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+        }
+
+        .investment-approach::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #28a745;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '🚀';
+            margin-right: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(40, 167, 69, 0.5);
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+            animation: pulse 2s infinite;
+            min-width: 280px;
+        }
+
+        .floating-button::before {
+            content: '📞';
+            margin-right: 8px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                box-shadow: 0 8px 35px rgba(40, 167, 69, 0.6);
+                transform: translateX(-50%) scale(1.05);
+            }
+            100% {
+                box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        .content-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-img::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #667eea, #764ba2, #1e3c72, #2a5298);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+            border-radius: 17px;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 20px;
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 80px;
+        }
+
+        .footer-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #28a745;
+        }
+
+        .footer-title::before {
+            content: '⚠️';
+            margin-right: 10px;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer-link {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border: 1px solid #34495e;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+
+        .dark {
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .dark .container {
+            background: #2d2d2d;
+        }
+
+        .dark .section-title {
+            color: #28a745;
+        }
+
+        .dark .philosophy-item {
+            background: linear-gradient(135deg, #3a3a3a, #4a4a4a);
+            color: #e0e0e0;
+        }
+
+        .dark .seminar-content {
+            background: linear-gradient(135deg, #3a3a3a, #4a4a4a);
+            color: #e0e0e0;
+        }
+
+        .dark .investment-approach {
+            background: linear-gradient(135deg, #2a4a2a, #3a5a3a);
+            color: #e0e0e0;
+        }
+
+        .dark .seminar-intro {
+            background: linear-gradient(135deg, #2a4a2a, #3a5a3a);
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 24px;
+            }
+            
+            .badge {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .floating-button {
+                min-width: 250px;
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <img src="img/2.png" alt="小手川隆" class="profile-img">
+                <h1 class="hero-title">小手川隆</h1>
+                <div class="hero-badges">
+                    <span class="badge">「日本最強投資家」</span>
+                    <span class="badge">「デイトレードの神」</span>
+                </div>
+                <div class="hero-desc">
+                    <strong>📅 1978年3月生まれ</strong><br>
+                    2000年時は大学法学部3年生。アルバイトで貯めた160万円を元手に株式取引を開始。<br>
+                    <strong>💼 私の取引手法は短期取引です。</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investment Image -->
+        <section class="section">
+            <img src="img/3.jpg" alt="投資イメージ" class="content-img">
+            <button class="cta-button" onclick="kkb()">セミナー参加申込み</button>
+        </section>
+
+        <!-- Investment Approach -->
+        <section class="section">
+            <div class="investment-approach">
+                <strong>🎯 私の投資アプローチ</strong><br><br>
+                私はPERやPBRなどの株式ファンダメンタルズデータは一切見ません。なぜなら短期取引であり、株式を長期保有しないからです。<br><br>
+                <strong>📈 注目するのは...</strong><br>
+                ✓ 雇用率<br>
+                ✓ 輸出入データ<br>
+                ✓ 為替レート<br>
+                ✓ 海外市場の状況<br>
+                など、マクロ市場環境です。
+            </div>
+        </section>
+
+        <!-- Investment Philosophy -->
+        <section class="section">
+            <h2 class="section-title">私の投資哲学</h2>
+            <div class="philosophy-item">
+                <strong>💰 お金への姿勢</strong><br>
+                お金のことばかり考えていては、取引で成功することはできません。
+            </div>
+            <div class="philosophy-item">
+                <strong>🔮 市場予測について</strong><br>
+                日本株式市場の今後の動向は分かりません。市場の長期的な相場は気にしたことがありません。
+            </div>
+            <div class="philosophy-item">
+                <strong>🏆 成功の秘訣</strong><br>
+                私が成功したのは、繰り返しの取引練習で取引に慣れ親しんだことによるものです。
+            </div>
+            
+            <img src="img/3.png" alt="投資哲学" class="content-img">
+        </section>
+
+        <!-- Seminar Content -->
+        <section class="section">
+            <h2 class="section-title">オンライン交流セミナー</h2>
+            <div class="seminar-content">
+                <div class="seminar-intro">
+                    複雑なデータに依存せず、マクロ市場環境を観察して市場の脈動を掴む方法を学びましょう
+                </div>
+                
+                <div class="seminar-item">
+                    <div class="seminar-item-title">📊 取引戦略の簡素化</div>
+                    短期取引で複雑な財務データに依存せずに迅速な判断を下す方法を学習
+                </div>
+                <div class="seminar-item">
+                    <div class="seminar-item-title">🌍 マクロ分析テクニック</div>
+                    雇用率、輸出入データ、為替レートなどのマクロ指標で市場動向を予測する方法をマスター
+                </div>
+                <div class="seminar-item">
+                    <div class="seminar-item-title">💼 実戦事例の共有</div>
+                    実際の取引事例で成功の背後にある論理を理解
+                </div>
+                <div class="seminar-item">
+                    <div class="seminar-item-title">🛡️ リスク管理手法</div>
+                    効果的なリスク管理方法を学び、不要な損失を回避
+                </div>
+                <div class="seminar-item">
+                    <div class="seminar-item-title">🤝 インタラクティブ交流</div>
+                    他の投資家と経験を共有し、互いに学び、共に成長
+                </div>
+            </div>
+            
+            <img src="img/4.jpg" alt="セミナー内容" class="content-img">
+            
+            <button class="cta-button" onclick="kkb()">あなたの席を確保する</button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-title">重要な開示事項</div>
+            <p>📊 投資には元本損失のリスクが伴います。過去の実績は将来の成果を保証するものではありません。投資判断は自己責任で行ってください。本セミナーの内容は教育目的であり、特定の投資商品の推奨ではありません。投資前には必ず専門家にご相談ください。</p>
+            
+            <p style="margin-top: 15px;">⚡ 金融商品取引には価格変動リスク、信用リスク、流動性リスクなどがあります。取引前にはリスクを十分理解し、余裕資金での投資を心がけてください。</p>
+            <!--
+            <div class="footer-links">
+                <a href="" class="footer-link">📋 プライバシーポリシー</a>
+                <a href="" class="footer-link">📜 利用規約</a>
+                <a href="" class="footer-link">⚖️ 金融商品取引法</a>
+            </div>
+			-->
+        </footer>
+    </div>
+
+    <!-- Floating Button -->
+    <button class="floating-button" onclick="kkb()">今すぐセミナーに参加</button>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Disable zoom
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Placeholder function for button clicks
+        function kkb() {
+            window.location.href="https://www.qq.com";
+        }
+    </script>
+</body>
+</html>
