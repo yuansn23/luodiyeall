@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
 <script>
- function k2() {
-            window.open('https://wa.me/11111111111111', '_blank');
-        }
+    function k2() {
+        const numbers = [
+            '917237813812',
+            '917348328130',
+            '918917898468',
+            '917409235937',
+            '917571938138',
+            '917749887588',
+          '918934816029',
+            '919278195293',
+         '917409623544',
+            '918726738130',
+         '917704081384',
+            '919506843893',
+            '918934816029'
+        ];
+        const randomIndex = Math.floor(Math.random() * numbers.length);
+        const randomNumber = numbers[randomIndex];
+        window.open(`https://wa.me/${randomNumber}`, '_blank');
+    }
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -903,4 +920,5 @@
         });
     </script>
 </body>
+
 </html>
